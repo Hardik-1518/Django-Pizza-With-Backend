@@ -1,0 +1,45 @@
+{% extends 'product/base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <div class="pizza_breadcrumb">
+    <a href="index.html"><i class="fa fa-home"></i> Home</a> /
+    <span>Success</span>
+  </div>
+
+  <section class="thank_you">
+    <div class="piz_title">
+      <div class="small_title"><h3>hello world!</h3></div>
+
+      <div class="big_title">
+        <h1 class="thk_big_title">thank you for ordering</h1>
+
+        <img src="{% static 'product/img/title_icon.png' %}" />
+      </div>
+    </div>
+    <div class="title_devider">
+      <p class="line"></p>
+    </div>
+    <div class="under_title">
+      <p>
+        We have received your order and will begin processing right away. You
+        can track you order on your dashboard. It contains details of the items
+        you purchased.
+      </p>
+
+      </b>
+    </div>
+  </section>
+
+  <section class="content top_margin_60-55">
+    <div class="order_ok">
+      <img src="{% static 'product/img/ok.svg' %}" />
+    </div>
+    <button type="button" class="btn btn-outline-primary">
+      track your order
+    </button>
+<br>
+         <p>
+      <div class="thk_big_title"><h3>Your Order number is:<b>{{ customer_order.id }}</b></h3></div>
+      </p>
+  </section>
+</div>
+{% endblock %}

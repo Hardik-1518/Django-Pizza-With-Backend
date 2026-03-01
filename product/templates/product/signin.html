@@ -1,0 +1,54 @@
+ {% extends 'product/base.html' %}{% load crispy_forms_tags %} {% load static %}{% block content %}
+
+    <div class="container">
+        <div class="pizza_breadcrumb">
+            <a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a> / <span>Log in</span>
+        </div>
+
+        <section class="login">
+            <div class="piz_title">
+                <div class="small_title"><h3>Login or Create a New account</h3></div>
+
+                <div class="big_title"><h1 class="log_big_title">New Customer</h1><img src="{% static 'product/img/title_icon.png' %}"></div>
+
+            </div>
+            <div class="title_devider">
+                <p class="line"></p>
+            </div>
+            <div class="under_title">
+                <p>When you create an account, you can see your orders history.</p>
+            </div>
+        </section>
+
+
+        <section class="content">
+            <div class="container">
+                <div class="row">
+
+                        <div class="col-md-12">
+                                     <form class="registration_form" method='post'>
+                                        {% csrf_token %}
+                                        <p> {{form|crispy}}</p>
+                                    <button type="submit" name="button" class="btn btn-primary">Sign In</button>    
+
+                                    </form>    
+                                </p>
+                                </div>
+                               
+                                <div class="big_title">
+                                    <h1 class="shop_big_title">
+                                    Create New account
+                                    </h1>
+                                    <br>
+                                    <a href="{% url 'signup' %}"> <button type="button" class="btn btn-outline-primary-red">Register</button></a>
+                                </div>
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
