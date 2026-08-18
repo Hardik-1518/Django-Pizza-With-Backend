@@ -28,6 +28,7 @@
     <link href="{% static 'product/css/navigation.css' %}" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'product/css/reset.css' %}" />
     <link rel="stylesheet" href="{% static 'product/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'product/css/modern_overrides.css' %}" />
     <script src="https://kit.fontawesome.com/8bd94e436e.js"></script>
   </head>
   <body>
@@ -96,7 +97,7 @@
                     </figure>
                     <div class="caption">
                       <div class="txt1">
-                        ${{cart_item.product.price}} x {{cart_item.quantity}}1
+                        ${{cart_item.product.price}} x {{cart_item.quantity}}
                       </div>
                       <div class="txt2">
                         <a href="#">{{cart_item.product.name}}</a>

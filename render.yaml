@@ -1,0 +1,23 @@
+# Render Infrastructure Blueprint Specification
+services:
+  - type: web
+    name: django-pizza-shop
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn project.wsgi:application"
+    plan: free # Can upgrade as needed
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0 # Uses Python 3.11.0
+      - key: DJANGO_SETTINGS_MODULE
+        value: project.settings
+      - key: RENDER
+        value: "True"
+      - key: SECRET_KEY
+        generateValue: true # Generates a secure secret key automatically
+      - key: DEBUG
+        value: "False"
+    disk:
+      name: sqlite-volume
+      mountPath: /data
+      sizeGB: 1

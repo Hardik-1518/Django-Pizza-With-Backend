@@ -33,13 +33,13 @@
     <div class="order_ok">
       <img src="{% static 'product/img/ok.svg' %}" />
     </div>
-    <button type="button" class="btn btn-outline-primary">
-      track your order
-    </button>
+    <a href="{% url 'my_dashboard' %}">
+      <button type="button" class="btn btn-outline-primary">
+        track your order
+      </button>
+    </a>
 <br>
-         <p>
-      <div class="thk_big_title"><h3>Your Order number is:<b>{{ customer_order.id }}</b></h3></div>
-      </p>
+    <div class="thk_big_title mt-4"><h3>Your Order number is: <b>{{ customer_order.id }}</b></h3></div>
   </section>
 </div>
 {% endblock %}
