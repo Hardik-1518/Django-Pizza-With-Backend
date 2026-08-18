@@ -145,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 22px !important;
   height: 22px !important;
   margin-right: 8px !important;
-  filter: sepia(1) saturate(3) hue-rotate(5deg); /* Match color theme */
+  filter: sepia(1) saturate(3) hue-rotate(5deg);
 }
 
 .my_cart_button .cart_circle {
@@ -254,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
 .modern-logo {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 800 !important;
-  font-size: 28px !important;
+  font-size: 26px !important;
   letter-spacing: -0.5px !important;
   color: var(--secondary-color) !important;
   text-transform: capitalize !important;
@@ -265,24 +265,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .modern-logo:hover {
   text-decoration: none !important;
+  color: var(--secondary-color) !important;
 }
 
 .modern-logo .logo-accent {
   color: var(--primary-color) !important;
-  margin-right: 2px;
+  margin-right: 4px;
 }
 
 .modern-logo-footer {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 800 !important;
-  font-size: 32px !important;
+  font-size: 28px !important;
   letter-spacing: -0.5px !important;
   color: var(--bg-white) !important;
   text-transform: capitalize !important;
   text-decoration: none !important;
   display: inline-flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .modern-logo-footer:hover {
@@ -292,37 +293,99 @@ h1, h2, h3, h4, h5, h6 {
 
 .modern-logo-footer .logo-accent {
   color: var(--primary-color) !important;
-  margin-right: 2px;
+  margin-right: 4px;
 }
 
-/* Navigation Menu Styles */
+/* Header Inner Layout, Alignment, and Overlaps Fix */
 .header-inner_1 {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  margin-top: 15px !important;
+  position: relative !important;
+  background: var(--bg-white) !important;
+  border-top: 1px solid #f3f4f6 !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  padding: 10px 0 !important;
+  min-height: 80px !important;
 }
 
-.navigation-menu {
+header.header_bg {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
   display: flex !important;
   align-items: center !important;
-  gap: 5px;
+  background: transparent !important;
+  box-shadow: none !important;
+  float: none !important;
+  z-index: 10 !important;
 }
 
+.logo {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+}
+
+/* Navigation Overlap Fix */
+#navigation.navigation {
+  background-color: transparent !important;
+  position: relative !important;
+  width: auto !important;
+  min-height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  box-shadow: none !important;
+  z-index: 5 !important;
+}
+
+#navigation.navigation .navigation-menu {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#navigation.navigation .navigation-menu .navigation-item {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 4px !important;
+}
+
+/* Override 100px line-height that broke layout and covered logo */
+#navigation.navigation .navigation-menu .navigation-link,
 .navigation-link {
+  line-height: normal !important;
+  height: auto !important;
+  padding: 10px 18px !important;
+  font-family: 'Poppins', sans-serif !important;
   font-weight: 600 !important;
-  font-size: 14px !important;
   color: var(--secondary-color) !important;
-  padding: 8px 16px !important;
-  border-radius: var(--border-radius-sm) !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
+  font-size: 14px !important;
+  border-bottom: 3px solid transparent !important;
+  border-radius: var(--border-radius-sm) !important;
   transition: var(--transition) !important;
+  background: transparent !important;
 }
 
-.navigation-link:hover {
-  background: var(--bg-light) !important;
+#navigation.navigation .navigation-menu .navigation-item:hover .navigation-link,
+#navigation.navigation .navigation-menu .navigation-item.is-active .navigation-link {
+  border-color: var(--primary-color) !important;
   color: var(--primary-color) !important;
+  background-color: var(--primary-light) !important;
+  text-decoration: none !important;
+}
+
+#navigation.navigation .navigation-menu .navigation-dropdown {
+  background: var(--bg-white) !important;
+  border-radius: var(--border-radius-sm) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border: 1px solid #f3f4f6 !important;
+  padding: 8px 0 !important;
+  top: 100% !important;
 }
 
 /* Category Filter Chips */
@@ -678,15 +741,15 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-hover) !important;
 }
 
-/* Footer layout restyle */
+/* Footer layout restyle & Text Contrast Fixes */
 footer {
   background: var(--secondary-color) !important;
-  color: #d1d5db !important;
+  color: #f3f4f6 !important;
   padding-top: 40px !important;
 }
 
 footer a {
-  color: #d1d5db !important;
+  color: #f3f4f6 !important;
   transition: var(--transition);
 }
 
@@ -731,23 +794,31 @@ footer a:hover {
   padding: 40px 0 !important;
 }
 
+/* Footer Contrast and Vector Icon styling */
 .contact-us-block {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  color: #ffffff !important;
 }
 
-.contact-us-block figure {
-  margin: 0 !important;
+.contact-us-block i {
+  color: var(--primary-color) !important;
+  font-size: 24px !important;
+  flex-shrink: 0;
 }
 
-.contact-us-block figure img {
-  filter: brightness(0) invert(1); /* make icons white */
+.contact-us-block .txt1,
+.contact-us-block .txt1 a {
+  color: #f3f4f6 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
 }
 
-.contact-us-block .txt1 {
-  font-size: 14px;
-  line-height: 1.6;
+.contact-us-block .txt1 a:hover {
+  color: var(--primary-color) !important;
 }
 
 .bot3-wrapper {
@@ -766,6 +837,7 @@ footer a:hover {
 
 .copyrights {
   float: right !important;
+  color: #9ca3af !important;
 }
 
 /* Hide List panel */
