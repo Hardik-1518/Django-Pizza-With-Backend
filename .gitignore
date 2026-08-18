@@ -1,0 +1,19 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+env/
+venv/
+ENV/
+
+# Django collected static files
+staticfiles/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Media uploads (optional: keep if you want initial product images in git)
+# media/
