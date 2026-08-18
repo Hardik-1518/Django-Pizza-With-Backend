@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-if os.environ.get('RENDER'):
+if os.environ.get('RENDER') and os.path.exists('/data'):
     DATABASE_PATH = Path('/data/db.sqlite3')
 else:
     DATABASE_PATH = BASE_DIR / 'db.sqlite3'

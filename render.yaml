@@ -5,7 +5,7 @@ services:
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn project.wsgi:application"
-    plan: free # Can upgrade as needed
+    plan: free
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0 # Uses Python 3.11.0
@@ -17,7 +17,3 @@ services:
         generateValue: true # Generates a secure secret key automatically
       - key: DEBUG
         value: "False"
-    disk:
-      name: sqlite-volume
-      mountPath: /data
-      sizeGB: 1
