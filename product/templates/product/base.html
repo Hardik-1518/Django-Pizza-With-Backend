@@ -55,7 +55,7 @@
                       name="title"
                       class="form-control"
                       placeholder=" Search...."
-                      style="width: 600px"
+                      style="width: 100%; max-width: 400px;"
                     />
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-outline-primary-gry">
@@ -144,8 +144,8 @@
           <div class="header-inner_1 clearfix">
             <header class="header_bg">
               <div class="logo">
-                <a href="{% url 'home' %}">
-                  <img src="{% static 'product/img/logo.png' %}" />
+                <a href="{% url 'home' %}" class="modern-logo">
+                  <span class="logo-accent">Slice</span>&Spice
                 </a>
               </div>
             </header>
@@ -294,15 +294,10 @@
           <div class="container">
             <div class="bot1 clearfix">
               <div class="logo2_wrapper">
-                <img
-                  src="{% static 'product/img/logo2_wrapper.png' %}"
-                  alt=""
-                  class="img-fluid"
-                />
+                <a href="{% url 'home' %}" class="modern-logo-footer">
+                  <span class="logo-accent">Slice</span>&Spice
+                </a>
                 <div class="logo_title">
-                  <div class="bottom_logo">
-                    <span>Pizzeria</span> TestaResto
-                  </div>
                   <div class="bottom_logo_desc">delicious foods place</div>
                 </div>
               </div>
@@ -390,8 +385,7 @@
       </footer>
       <div id="loader" class="loader-holder">
         <div class="block">
-          <img src="{% static 'product/img/hearts.svg' %} width="100"
-          alt="loader">
+          <img src="{% static 'product/img/hearts.svg' %}" width="100" alt="loader" />
         </div>
       </div>
     </div>

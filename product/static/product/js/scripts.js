@@ -275,7 +275,7 @@ $('#customCheck1').on('change', function(){
 jQuery( window ).on( "load" , function() {
   "use strict";
 
-  jQuery( "#loader" ).delay( 1000 ).fadeOut( 300 );
+  jQuery( "#loader" ).fadeOut( 150 );
 
 });
 
